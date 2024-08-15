@@ -1,4 +1,4 @@
-package sobreescrita.dominio.teste;
+package sobreescrita.teste;
 
 import sobreescrita.dominio.Anime;
 
