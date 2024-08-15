@@ -1,6 +1,6 @@
 package blocosInicializacao.teste;
 
-import blocosInicializacao.domain.Anime;
+import blocosInicializacao.dominio.Anime;
 
 public class AnimeTeste01 {
         public static void main(String[] args) {
