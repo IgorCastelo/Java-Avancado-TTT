@@ -4,6 +4,8 @@ import eenum.dominio.Cliente;
 import eenum.dominio.TIpoCliente;
 import eenum.dominio.TipoPagamento;
 
+import java.sql.SQLOutput;
+
 public class ClienteTeste01 {
     public static void main(String[] args) {
         Cliente cliente = new Cliente("Tsubasa", TIpoCliente.PESSOA_FISICA, TipoPagamento.DEBITO);
@@ -17,5 +19,9 @@ public class ClienteTeste01 {
 
         System.out.println(TipoPagamento.DEBITO.calculardesconto(100));
         System.out.println(TipoPagamento.CREDITO.calculardesconto(100));
+        TIpoCliente tipoCliente = TIpoCliente.valueOf(("PESSOA_FISICA"));
+        System.out.println(tipoCliente.getNomeRelatorio());
+        TIpoCliente tipoCliente2= TIpoCliente.tipoclientePorNomeRelatorio("Pessoa Fisica");
+        System.out.println(tipoCliente2);
     }
 }
