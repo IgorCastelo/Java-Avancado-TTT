@@ -1,10 +1,7 @@
 package eenum.dominio;
 
 public class Cliente {
-    public enum TipoPagamento{
-        CREDITO,
-        DEBITO;
-    }
+
     private String nome;
     private TIpoCliente tipoCliente;
 
