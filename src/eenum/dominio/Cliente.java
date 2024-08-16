@@ -1,10 +1,16 @@
 package eenum.dominio;
 
 public class Cliente {
+    public enum TipoPagamento{
+        CREDITO,
+        DEBITO;
+    }
     private String nome;
     private TIpoCliente tipoCliente;
 
-    public Cliente(String nome, TIpoCliente tipoCliente) {
+
+
+    public Cliente(String nome, TIpoCliente tipoCliente, TipoPagamento credito) {
         this.nome = nome;
         this.tipoCliente = tipoCliente;
     }
@@ -30,6 +36,7 @@ public class Cliente {
         return "Cliente{" +
                 "nome='" + nome + '\'' +
                 ", tipoCliente=" + tipoCliente +
+                ", tipoCliente=" + tipoCliente.VALOR +
                 '}';
     }
 }
