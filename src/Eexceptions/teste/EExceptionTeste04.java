@@ -1,25 +1,34 @@
 package Eexceptions.teste;
 
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
 
-public class EExceptionTeste03 {
+public class EExceptionTeste04 {
     public static void main(String[] args) throws IOException {
-        abreConexao();
 
-    }
 
-    private static String abreConexao() throws IOException {
+
+
         try {
-            System.out.println("Abrindo carquivo");
-            System.out.println("Escreendo dados no arquivo");
-            return "conexao aberta";
+            throw new RuntimeException();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            System.out.println("Fechando recursos liberados pelo SQ");
+        } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException | ArithmeticException e) {
+            System.out.println("Dentro do ArrayIndexOutOfBoundsException | IllegalArgumentException | ArithmeticException");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Dentro do IndexOutOfBoundsException");
+        } catch (RuntimeException e) {
+            System.out.println("Dentro do RuntimeException ");
         }
-    return null;
+
+        try {
+            talvezLanceException();
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+
     }
-}
+        private static void talvezLanceException() throws SQLException, IOException {
+            System.out.println("talvezlance uma exessão");
+        }
+    }

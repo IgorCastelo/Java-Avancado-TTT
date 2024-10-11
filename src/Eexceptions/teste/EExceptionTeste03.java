@@ -3,21 +3,23 @@ package Eexceptions.teste;
 import java.io.File;
 import java.io.IOException;
 
-public class EExceptionTeste02 {
+public class EExceptionTeste03 {
     public static void main(String[] args) throws IOException {
-        criarNovoArquivo();
+        abreConexao();
 
     }
 
-    private static void criarNovoArquivo() throws IOException {
-        File file = new File("arquivo\\teste.txt");
+    private static String abreConexao() throws IOException {
         try {
-            boolean isCriado = file.createNewFile();
-            System.out.println("Arquivo Criado" + isCriado);
+            System.out.println("Abrindo carquivo");
+            System.out.println("Escreendo dados no arquivo");
+            return "conexao aberta";
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            throw e;
+        }finally {
+            System.out.println("Fechando recursos liberados pelo SQ");
         }
+    return null;
     }
 }

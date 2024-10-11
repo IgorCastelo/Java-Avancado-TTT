@@ -1,2 +1,4 @@
-package exception.teste;public class StackOverFlowTeste01 {
+package exception.teste;
+
+public class StackOverFlowTeste01 {
 }

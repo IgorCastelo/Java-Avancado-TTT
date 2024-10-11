@@ -1,2 +1,5 @@
-package polimorfismo.dominio;public interface Taxavel {
+package polimorfismo.dominio;
+
+public interface Taxavel {
+    public abstract double  calcularImposto();
 }

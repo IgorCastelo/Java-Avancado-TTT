@@ -1,4 +1,4 @@
-package Eexceptions.teste;
+package EString.teste;
 
 import java.sql.SQLOutput;
 
