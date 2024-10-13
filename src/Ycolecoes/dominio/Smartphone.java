@@ -1,4 +1,4 @@
-package Ycolecoes.test;
+package Ycolecoes.dominio;
 
 public class Smartphone {
     private String seialNumber;
@@ -23,5 +23,13 @@ public class Smartphone {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "seialNumber='" + seialNumber + '\'' +
+                ", modelo='" + modelo + '\'' +
+                '}';
     }
 }
