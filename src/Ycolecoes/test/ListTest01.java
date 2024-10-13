@@ -9,7 +9,7 @@ public class ListTest01 {
         List<String> nomes = new ArrayList<>( 3); // 1.
         List<String> nomes2 = new ArrayList<>( 3); // 1.
         nomes.add("Igor Castelo");
-        nomes.add("Familia Castelo");
+        nomes.add("Familia Castelooo");
         nomes2.add("Francisca Carneiro de Freitas Castelo");
         nomes2.add("Familia Castelo");
 
@@ -18,7 +18,7 @@ public class ListTest01 {
             System.out.println(name);
         }
         
-        System.out.println("--------");
+        System.out.println("---_-----");
         //int size = nomes.size()+10;
         //System.out.println(size);
         for(int i = 0; i < nomes.size(); i++) {
