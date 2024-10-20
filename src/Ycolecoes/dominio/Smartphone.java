@@ -35,8 +35,17 @@ public class Smartphone {
         if (obj == null) return false;
         if (this == obj) return true;
         if (obj.getClass() != this.getClass()) return false;
-        Smartphone smartphone = (Smartphone) obj;
+        Smartphone smartphone = (Smartphone) obj;//casting
         return this.serialNumber != null && this.serialNumber.equals(smartphone.serialNumber);
+    }
+    // se x.equals(y) == true, y.hashCode() == x.hashCode()
+    // se y.hashCode() == x.hashCode() não necessariamente o equals de y.equals(x) tem que ser true
+    // x.equals(y) == false
+    // y.hashCode() != x.hashCode(), x.equals(y) devem ser false.
+
+    @Override
+    public int hashCode() {
+        return serialNumber==null ? 0 :this.serialNumber.hashCode();
     }
 
     @Override
