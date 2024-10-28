@@ -51,7 +51,7 @@ public class Smartphone {
     @Override
     public String toString() {
         return "Smartphone{" +
-                "seialNumber='" + serialNumber + '\'' +
+                "serialNumber='" + serialNumber + '\'' +
                 ", modelo='" + marca + '\'' +
                 '}';
     }

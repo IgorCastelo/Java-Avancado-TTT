@@ -6,6 +6,7 @@ public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar
     private Long id;
     private String  nome;
     private double preco;
+    private int quantidade;
 
     public Manga(Long id, String nome, double preco) {
         Objects.requireNonNull(id,"Id não pode ser null");
@@ -15,6 +16,19 @@ public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar
         this.preco = preco;
     }
 
+    public Manga(Long id, String nome, double preco, int quantidade) {
+        this(id,nome,preco);
+        this.quantidade = quantidade;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -22,19 +36,14 @@ public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar
 
         Manga manga = (Manga) o;
 
-        if (Double.compare(preco, manga.preco) != 0) return false;
-        if (!id.equals(manga.id)) return false;
-        return nome.equals(manga.nome);
+        if (!Objects.equals(id, manga.id)) return false;
+        return Objects.equals(nome, manga.nome);
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = id.hashCode();
-        result = 31 * result + nome.hashCode();
-        temp = Double.doubleToLongBits(preco);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (nome != null ? nome.hashCode() : 0);
         return result;
     }
 
@@ -67,7 +76,8 @@ public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar
         return "Manga{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", preço=" + preco +
+                ", preco=" + preco +
+                ", quantidade=" + quantidade +
                 '}';
     }
 
@@ -85,4 +95,6 @@ public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar
         //return this.id.compareTo(outroManga.getId()); // é possivel chamar o comparTo pelo proproprio id por ele ser um wrapper
         return  this.nome.compareTo(outroManga.getNome());
     }
-    }
+
+
+}
