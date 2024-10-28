@@ -1,6 +1,7 @@
 package Ycolecoes.dominio;
 
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar a classe comparable do qu e a comparator po causa da sua necessidade de acoplamento na classe, deixando opouco flexivel a definição da regra de busca.
     private Long id;
@@ -9,15 +10,17 @@ public class Manga implements Comparable<Manga> {// É menos prefirivel utilizar
     private int quantidade;
 
     public Manga(Long id, String nome, double preco) {
-        Objects.requireNonNull(id,"Id não pode ser null");
-        Objects.requireNonNull(id,"Nome não pode ser null");
+       Objects.requireNonNull(id,"Id não pode ser null");
+       Objects.requireNonNull(id,"Nome não pode ser null");
         this.id = id;
+       // this.id = ThreadLocalRandom.current().nextLong(0,100_000);
         this.nome = nome;
         this.preco = preco;
     }
 
     public Manga(Long id, String nome, double preco, int quantidade) {
         this(id,nome,preco);
+       // this.id = ThreadLocalRandom.current().nextLong(0,100_000);
         this.quantidade = quantidade;
     }
 
